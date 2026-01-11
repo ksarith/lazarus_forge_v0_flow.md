@@ -1,137 +1,246 @@
-# Air Scrubber v0 — Environmental & Operator Safety Module
+Air Scrubber v0 — Design Doctrine
 
-## Purpose
+Purpose
 
-The Air Scrubber exists to **prevent harm** during Lazarus Forge operations.
-It captures particulates, fumes, and off-gassing produced during
-irreversible or abrasive processes.
+The Air Scrubber is a core stewardship subsystem of the Lazarus Forge. Its purpose is to prevent the release, accumulation, or uncontrolled transformation of hazardous airborne byproducts generated during Forge operation. The scrubber is not an accessory or afterthought; it is an enabling system without which the Forge shall not operate.
 
-This module is **infrastructure**, not innovation.
+The Air Scrubber exists to:
 
-If the Air Scrubber is absent or non-functional, downstream operation is invalid.
+Protect operators, nearby systems, and environments
 
----
+Prevent secondary hazard creation (e.g., toxic reaction products)
 
-## Design Philosophy
+Capture, stabilize, and channel byproducts into managed streams
 
-- Safety is non-negotiable
-- Known methods are preferred over novel ones
-- Inspection and maintenance must be simple
-- Environmental controls are separate from material logic
+Provide diagnostic insight into Forge chemistry and health
 
-The Air Scrubber does not increase material value.
-It enables the system to operate responsibly.
+
 
 ---
 
-## Position in System Flow
+Design Philosophy
 
-The Air Scrubber operates **in parallel** with:
+1. Capture Is Part of Production
 
-- Reduction (cutting, shredding, milling)
-- Stratification (solid-state triage)
-- Melt-based refinement (Spin Chamber, purification)
-- Fabrication and joining
+All Forge processes assume byproduct generation. The Air Scrubber is designed as a continuation of the production path, not a cleanup step performed after the fact.
 
-It is not a gate, classifier, or decision system.
+No Forge mode assumes “clean exhaust.” Every mode assumes containment.
+
 
 ---
 
-## Contaminants Addressed (v0 Scope)
+2. Interaction Is Forced, Not Hoped For
 
-- Particulates (metal dust, plastics, ceramics)
-- Combustion byproducts
-- Off-gassing from coatings, oils, adhesives
-- Thermal decomposition fumes (limited)
+The system does not rely on dilution, dispersion, or passive escape.
 
-The v0 system does **not** attempt to handle:
-- Unknown chemical weapons
-- Large-scale industrial emissions
-- Continuous toxic gas production
+Airflow is deliberately manipulated to:
 
----
+Increase residence time
 
-## Core Subsystems (v0)
+Increase molecular and particulate interaction
 
-### 1. Intake & Ducting
+Convert mobile hazards into capturable forms
 
-- Localized capture near emission source
-- Negative pressure preferred
-- Avoids whole-room dilution strategies
+
+The scrubber biases physics toward capture.
+
 
 ---
 
-### 2. Particulate Filtration
+3. Charge, Cool, Then Capture
 
-- Mechanical filters (coarse → fine stages)
-- Replaceable and inspectable
-- Designed to fail visibly, not silently
+Hazardous species are most difficult to manage when they are hot, fast-moving, and neutral.
 
----
+The scrubber architecture follows a consistent logic:
 
-### 3. Wet or Adsorptive Stage (Optional)
+1. Charge airborne species to encourage attachment and agglomeration
 
-- Water-based scrubbing OR
-- Activated carbon / adsorption media
 
-Selection depends on:
-- Material mix
-- Availability
-- Maintenance capability
+2. Cool the gas stream to reduce volatility and stabilize intermediates
 
----
 
-### 4. Exhaust / Vent
+3. Capture contaminants into liquid or solid phases
 
-- Filtered exhaust routed safely
-- No claims of zero-emission operation
-- Compliance with local regulations assumed
+
+
+This ordering is intentional and forms the backbone of the system.
+
 
 ---
 
-## Operational Rules
+4. Negative Pressure as a Safety Boundary
 
-- Air Scrubber must be active during:
-  - Reduction
-  - Any thermal process
-  - Any unknown-material handling
-- Scrubber status is logged
-- Bypass operation is explicitly disallowed
+The Air Scrubber operates under slight negative pressure relative to its surroundings.
 
----
+Design intent:
 
-## Maintenance & Inspection
+Leaks draw air inward rather than expelling contaminants
 
-- Filters are consumables
-- Wet stages require periodic cleaning
-- Adsorption media requires replacement
+Loss of airflow is treated as a critical fault
 
-A neglected scrubber is considered a system failure.
+The Forge defaults to shutdown rather than uncontrolled exhaust
+
+
+Containment is maintained even during partial failure.
+
 
 ---
 
-## Metrics (Sanity Checks, Not Optimization)
+Functional Architecture (Conceptual)
 
-- Visible dust escape (should be zero)
-- Filter loading rate
-- Operator exposure indicators
-- Maintenance interval stability
+Stage A — Sacrificial Mechanical Intercept
 
-No attempt is made to optimize efficiency beyond safety requirements.
+Intent: Protect downstream stages and define a human-safe interaction point.
 
----
+Captures coarse particulates and debris
 
-## Explicit Non-Goals
+Prevents fouling of ionization and wet stages
 
-- Novel air chemistry
-- Energy recovery from exhaust
-- Full industrial-scale compliance modeling
-- Invisible or self-healing systems
+Designed for frequent replacement or servicing
+
+
+This stage is treated as expendable by design.
+
 
 ---
 
-## Notes
+Stage B — Ionization / Electrostatic Conditioning
 
-- This module exists to protect people and learning
-- It is intentionally uninteresting
-- Its success is measured by absence of incidents
+Intent: Convert poorly behaved contaminants into cooperative ones.
+
+Imparts charge to particulates, aerosols, and vapors
+
+Encourages agglomeration and surface attachment
+
+Increases downstream capture efficiency
+
+
+Ionization energy is moderated; the goal is interaction, not destruction.
+
+Ozone or unintended reactive species are considered fault conditions and must be monitored.
+
+
+---
+
+Stage C — Thermal Quench / Cooling Zone
+
+Intent: Reduce mobility, volatility, and reaction rates.
+
+Rapidly lowers gas temperature
+
+Encourages condensation of semi-volatile compounds
+
+Stabilizes charged species long enough for capture
+
+
+Cooling may be active or passive but must be explicit in design.
+
+
+---
+
+Stage D — Wet Scrubbing / Water Column
+
+Intent: Perform bulk removal and phase transfer.
+
+This stage simultaneously:
+
+Absorbs soluble gases
+
+Captures charged and agglomerated particulates
+
+Condenses vapors into liquid form
+
+Removes heat from the exhaust stream
+
+
+Water is operated in a recirculating loop with monitoring. The scrubber assumes that captured material is hazardous until proven otherwise.
+
+
+---
+
+Stage E — Polishing / Last-Chance Capture
+
+Intent: Avoid reliance on any single mechanism.
+
+Captures residual contaminants that escape primary stages
+
+Provides redundancy against upstream variability
+
+Serves as a final barrier before release
+
+
+The specific method is modular and may evolve without changing upstream philosophy.
+
+
+---
+
+Waste as a Managed Output
+
+Captured materials are not treated as disposable nuisances.
+
+Liquids, sludges, and solids are routed into controlled handling paths
+
+Composition is monitored as a diagnostic signal
+
+Outputs may become future feedstock or require immobilization
+
+
+The Air Scrubber doubles as a sensor system for Forge chemistry.
+
+
+---
+
+Monitoring & Failure Doctrine
+
+The scrubber is instrumented to detect:
+
+Loss of airflow or pressure balance
+
+Excessive ionization byproducts
+
+Water chemistry drift
+
+Overflow or carryover conditions
+
+
+Design rule:
+
+> If the scrubber cannot verify safe operation, the Forge does not run.
+
+
+
+Safety is enforced through system logic, not operator vigilance.
+
+
+---
+
+Compatibility With Autonomous Operation
+
+While this document does not prescribe control software, the Air Scrubber is designed to:
+
+Operate continuously without manual tuning
+
+Provide clear health signals to supervisory systems
+
+Fail into containment rather than release
+
+
+Human oversight is optional; stewardship is not.
+
+
+---
+
+Summary Doctrine
+
+The Air Scrubber is not a filter.
+
+It is a boundary system that:
+
+Forces hazardous matter into managed forms
+
+Prevents accidental chemistry
+
+Makes responsible operation possible at scale
+
+
+A Forge that cannot clean up after itself is incomplete by definition.
